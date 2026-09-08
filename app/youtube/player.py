@@ -56,3 +56,11 @@ for pattern in patterns:
     text
   )
 
+if match:
+
+  query = match.group(1)
+  break
+
+query = query.strip()
+
+video id = get_vid(query)
