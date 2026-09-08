@@ -64,3 +64,13 @@ if match:
 query = query.strip()
 
 video id = get_vid(query)
+
+if not video_id:
+  return None 
+  
+  return (
+  "https://www.youtube.com/embed/"
+  + video_id
+  + "?autoplay=1&mute=0"
+  )
+  
