@@ -36,7 +36,7 @@ def health():
         "service": "Nova AI Agent"
     })
     #gmail ai agent
-    @app.route("/agent",methods= [POST"])
+    @app.route("/agent",methods= ["POST"])
     def agent():
         try:
             data = request.get_json(silent=True) or {}
