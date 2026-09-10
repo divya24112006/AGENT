@@ -20,7 +20,7 @@ def create_app():
 #YOUTUBE
 app.register_blueprint(
     youtube_bp:
-url_prefix="/youtube'
+url_prefix = "/youtube'
 )
 
 #home
