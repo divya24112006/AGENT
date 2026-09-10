@@ -23,3 +23,8 @@ Rules:
 -Do not explain everything
 -Do not invent names,dates,prices,companies,attachments, or facts.
 -Keep the email natural and concise
+-Include an appropriater greeting and closing.
+
+Output exactly:
+
+SUBJECT: <subject>
