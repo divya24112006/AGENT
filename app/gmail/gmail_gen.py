@@ -66,7 +66,7 @@ for attempt in range(4):
 text = data["candidate"][0]["content"]["parts"][0]["text"]
 text = re.sub(r"'''(?:text)?|'''","",text).strip()
 
-subject = re.search(r"SUBJECT:\s*(.+)*,text, re.I)
+subject = re.search(r"SUBJECT:\s*(.+)",text, re.I)
 body = re.search(R"body:\s*([\s\S]+)",text,re.I)
 if not subject or not body:
 raise RuntimeError("Gemini returned an invalid email format.")
@@ -79,7 +79,18 @@ return{
 except urllib.error.HTTPError as e:
  if e.code !=429 or attempt ==3:
  try:
- detail
+ detail =e.read().decode()
+except Exception:
+detail = str(e)
+raise RuntimeError(f"Gemini API error: {detail}")
+
+time.sleep((2 ** attempt) + random.random())
+
+except Exception:
+if attempt == 3:
+  raise 
+  time.sleep(1)
+
 
 
 
