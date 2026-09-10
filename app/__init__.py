@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, request, jsonify, render_template
-from flask-cors import CORS
+from flask_cors import CORS
 
 from app.gmail import(
 is_email_command,
